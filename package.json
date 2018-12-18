@@ -1,0 +1,31 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "App that tracks burgers waiting to be eaten",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edcourtney74/Burger.git"
+  },
+  "keywords": [
+    "npm",
+    "node",
+    "express",
+    "mysql",
+    "handlebars"
+  ],
+  "author": "Ed Courtney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edcourtney74/Burger/issues"
+  },
+  "homepage": "https://github.com/edcourtney74/Burger#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.16.0"
+  }
+}
