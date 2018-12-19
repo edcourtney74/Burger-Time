@@ -2,7 +2,7 @@ body {
     background-image: url("../images/burger_background.jpg");
     background-size: 105%;
     background-repeat: no-repeat;
-    background-color:#36332a;
+    background-color:#211e17;
     color: white;
 }
 
@@ -14,9 +14,10 @@ li {
     line-height: 1.5;
 }
 
-.eat-burger {
+.btn-sm {
     background-color: #24211a;
     color: white;
+    width: 20%;
 }
 
 .form-control-lg {
@@ -24,7 +25,7 @@ li {
 }
 
 .icon {
-    width: 25%;
+    width: 30%;
 }
 
 #btn-add {
