@@ -13,13 +13,12 @@ connection.connect(function(err) {
 // Creating ORM variable to hold MySQL sort functions
 var orm = {
     // Function to show all burgers in the database
-    selectAll: function() {
-        console.log("Running")
-        connection.query("SELECT * FROM burgers", function (err, data) {
+    selectAll: function(table, cb) {
+        connection.query("SELECT * FROM ??", [table], function (err, result) {
             if (err) {
                 throw err;  
             }
-            console.log(data);
+            cb(result);
         });
     },
     // Function to insert a new burger into the database;

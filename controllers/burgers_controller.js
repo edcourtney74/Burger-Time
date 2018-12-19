@@ -1,8 +1,27 @@
 // Import express npm
 var express = require("express");
-var app = express(app);
+// Create router
+var router = express.Router();
 
 // Import from burger.js
-var burger = require("../models/burger");
+var burger = require("../models/burger.js");
 
-// Create the `router` for the app, and export the `router` at the end of your file.
+// Route for the home page
+router.get("/", function(req, res) {
+    // Calls burger.selectAll function
+    burger.selectAll(function(data) {
+        // Saves all burger data in a database
+        var burgerObj = {
+            burgers: data
+        };
+        console.log(burgerObj);
+        // Renders page using index.handlebars and sening the burgerObj retrieved from the database
+        res.render("index", burgerObj);
+    });
+});
+
+
+
+
+// Export routes for use in server.js
+module.exports = router;

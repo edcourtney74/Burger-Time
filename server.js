@@ -17,6 +17,10 @@ app.use(express.json());
 // Set static folder for assets
 app.use(express.static("public/assets"));
 
+// Inport routes for server to use
+var routes = require("./controllers/burgers_controller.js");
+app.use(routes);
+
 // Start the server
 app.listen(PORT, function() {
     // Log server has started

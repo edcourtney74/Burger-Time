@@ -1,0 +1,24 @@
+body {
+    background-image: url("../images/burger_background.jpg");
+    background-size: 105%;
+    background-repeat: no-repeat;
+    background-color:#36332a;
+    color: white;
+}
+
+form {
+    margin-top: 45%;
+}
+
+li {
+    line-height: 1.5;
+}
+
+#btn-add {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.form-control-lg {
+    width: 100%;
+}

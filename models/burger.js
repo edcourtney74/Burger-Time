@@ -3,8 +3,10 @@ var orm = require("../config/orm.js");
 
 // Calls ORM functions based on inputs
 var burger = {
-    selectAll: function() {
-        orm.selectAll();
+    selectAll: function(cb) {
+        orm.selectAll("burgers", function(res) {
+            cb(res);
+        });
     },
     insertOne: function(name) {
         orm.insertOne(name);
@@ -14,4 +16,5 @@ var burger = {
     }
 }
 
+// Export for use in burgers_controllers.js
 module.exports = burger;
