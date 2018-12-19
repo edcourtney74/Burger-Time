@@ -4,7 +4,8 @@
   "description": "App that tracks burgers waiting to be eaten",
   "main": "server.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
