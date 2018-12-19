@@ -14,11 +14,20 @@ li {
     line-height: 1.5;
 }
 
-#btn-add {
-    width: 80%;
-    margin-left: 10%;
+.eat-burger {
+    background-color: #24211a;
+    color: white;
 }
 
 .form-control-lg {
     width: 100%;
+}
+
+.icon {
+    width: 25%;
+}
+
+#btn-add {
+    width: 80%;
+    margin-left: 10%;
 }

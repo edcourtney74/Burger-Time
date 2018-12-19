@@ -28,6 +28,14 @@ router.post("/", function(req, res) {
     })
 });
 
+// Route for the put to update burger devoured to true
+router.put("/", function(req, res) {
+    burger.updateOne(req.body.devourID, function(result) {
+        console.log("Put method: " + req.body.devourID)
+        // Send back burger devoured state
+        res.json({ burger: result.devoured})
+    })
+})
 
 
 

@@ -5,14 +5,13 @@ $(function() {
     $("#btn-add").on("click", function(event) {
         // Prevent default on submit
         event.preventDefault();
-        console.log("Button clicked!")
         
         // Create new variable using data captured from form
         var newBurger = {
             burger: $("#burger").val().trim()
         }
         console.log(newBurger);
-
+        
         // Send post request
         $.ajax("/", {
             type: "POST",
@@ -22,6 +21,28 @@ $(function() {
             console.log("created new burger");
             location.reload();
         })
+    })
+    
+    // When user clicks devour button after eating a burger
+    $(".eat-burger").on("click", function(event) { 
+        // Prevent default on submit
+        event.preventDefault();
+
+        // Create variable that grabs the id from the button clicked
+        var devourID = {
+            devourID: $(this).data("id")
+        };
+        console.log("ID: " + devourID);
+                
+        // Send the Put request
+        $.ajax("/", {
+            type: "PUT",
+            data: devourID
+        }).then(function() {
+            // Reload the page to see update
+            console.log("Put response received");
+            location.reload();
+        })      
     })
 });
 

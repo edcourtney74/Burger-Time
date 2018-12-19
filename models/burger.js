@@ -13,8 +13,10 @@ var burger = {
             onCallback(res);
         });
     },
-    updatOne: function(id) {
-        orm.updateOne(id)
+    updateOne: function(id, onCallback) {
+        orm.updateOne(id, function(res) {
+            onCallback(res);
+        });
     }
 }
 

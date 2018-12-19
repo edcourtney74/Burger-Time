@@ -31,14 +31,16 @@ var orm = {
         })
     },    
     // Function to update burger's devoured value to true
-    updateOne: function(id) {
-        connection.query("UPDATE burgers SET devoured = true WHERE id = ?", [req.params.id], function (err, result) {
+    updateOne: function(id, onCallback) {
+        connection.query("UPDATE burgers SET devoured = true WHERE id = ?", [id], function (err, result) {
             if (err) {
                 throw err;
                 // Check to see if a row was changed; if not, throw an error
             } else if (result.changedRows === 0) {
                 return err;
-            }        
+            } else {
+                onCallback(result);
+            }
         })
     }
 }
