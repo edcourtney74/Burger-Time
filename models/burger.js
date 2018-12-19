@@ -3,13 +3,15 @@ var orm = require("../config/orm.js");
 
 // Calls ORM functions based on inputs
 var burger = {
-    selectAll: function(cb) {
+    selectAll: function(onCallback) {
         orm.selectAll("burgers", function(res) {
-            cb(res);
+            onCallback(res);
         });
     },
-    insertOne: function(name) {
-        orm.insertOne(name);
+    insertOne: function(name, onCallback) {
+        orm.insertOne(name, function(res) {
+            onCallback(res);
+        });
     },
     updatOne: function(id) {
         orm.updateOne(id)

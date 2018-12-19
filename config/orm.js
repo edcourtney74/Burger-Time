@@ -13,20 +13,21 @@ connection.connect(function(err) {
 // Creating ORM variable to hold MySQL sort functions
 var orm = {
     // Function to show all burgers in the database
-    selectAll: function(table, cb) {
+    selectAll: function(table, onCallback) {
         connection.query("SELECT * FROM ??", [table], function (err, result) {
             if (err) {
                 throw err;  
             }
-            cb(result);
+            onCallback(result);
         });
     },
     // Function to insert a new burger into the database;
-    insertOne: function(name) {
-        connection.query("INSERT INTO burgers (burger_name) VALUES (?)", [req.body.burger_name], function(err, result) {
+    insertOne: function(name, onCallback) {
+        connection.query("INSERT INTO burgers (burger_name) VALUES (?)", [name], function(err, result) {
             if (err) {
                 throw err;
-            }               
+            }
+            onCallback(result);
         })
     },    
     // Function to update burger's devoured value to true

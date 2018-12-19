@@ -1,22 +1,29 @@
-{{!-- * Setup the `index.handlebars` to have the template that Handlebars can render onto.
-
-* Create a button in `index.handlebars` that will submit the user input into the database. --}}
+{{!-- Overall page container --}}
 <div class="container mt-5 ml-5">
      <div class="row">
           <div class="col-md-7">
+               {{!-- Section for burgers user wants to eat --}}
                <h1>Burgers you want to eat</h1>
                <ol>
+                    {{!-- For each burger in the data... --}}
                     {{#each burgers}}
+                    {{!-- If devoured = false, show burger name here --}}
                     {{#unless devoured }}
                     <h4>
-                         <li>{{burger_name}}</li>
+                         <li>{{burger_name}}
+                         <img src="./images/icon.png"
+                         <button class="eat-burger" data-id="{{id}}">DEVOUR!</button>
+                         </li>
                     </h4>
                     {{/unless}}
                     {{/each}}
                </ol>
+               {{!-- Section for burgers user already ate --}}
                <h1 class="pt-4">Burgers you already ate</h1>
                <ol>
+                    {{!-- For each burger in the data... --}}
                     {{#each burgers}}
+                    {{!-- If the user has eaten the burger, display burger name here --}}
                     {{#if devoured }}
                     <h4>
                          <li>{{burger_name}}</li>

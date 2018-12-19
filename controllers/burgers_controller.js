@@ -15,9 +15,17 @@ router.get("/", function(req, res) {
             burgers: data
         };
         console.log(burgerObj);
-        // Renders page using index.handlebars and sening the burgerObj retrieved from the database
+        // Renders page using index.handlebars and sending the burgerObj retrieved from the database
         res.render("index", burgerObj);
     });
+});
+
+// Route for the post when user submits a new burger
+router.post("/", function(req, res) {
+    burger.insertOne(req.body.burger, function(result) {
+        // Send back burger name
+        res.json({ burger: result.name})
+    })
 });
 
 
