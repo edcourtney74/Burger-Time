@@ -1,9 +1,9 @@
 {{!-- Overall page container --}}
 <div class="container mt-5 ml-5">
      <div class="row">
-          <div class="col-md-7">
+          <div class="col-12 order-2 order-md-1 col-md-8 col-lg-6">
                {{!-- Section for burgers user wants to eat --}}
-               <h1>Burgers you want to eat</h1>
+               <h1 class="list">Burgers you want to eat</h1>
                <ol>
                     {{!-- For each burger in the data... --}}
                     {{#each burgers}}
@@ -36,11 +36,11 @@
                     {{/each}}
                </ol>
           </div>
-          <div class="col-md-4 offset-md-1">
+          <div class="col-12 order-1 col-md-3 order-md-2 offset-md-1 col-lg-4 offset-lg-1 border">
                {{!-- Area to add a burger --}}
                <form>
                     <div class="form-group">
-                         <input type="text" class="form-control-lg" id="burger" placeholder="Enter a burger you'd like to eat.">
+                         <input type="text" class="form-control-lg" id="burger" placeholder="Enter a burger">
                     </div>
                     <button type="submit" class="btn btn-dark btn-lg" id="btn-add">Add Burger</button>
                </form>
