@@ -8,17 +8,15 @@
                     {{!-- For each burger in the data... --}}
                     {{#each burgers}}
                     {{!-- If devoured = false, show burger name here --}}
-                    {{#unless devoured}}
-                    <h4>
-                         <li>{{burger_name}}
-                         <button type="button" class="btn btn-sm border px-0 ml-2" data-id="{{id}}">
+                         {{#unless devoured}}
+                         <h4>
+                              <li class="py-2">{{burger_name}}</h4>
+                              <button type="button" class="btn btn-sm border px-0 ml-2" data-id="{{id}}">
                               <img src="./images/icon.png" class="icon">
                               DEVOUR!
-                         </button>
-                         </li>
-                    </h4>
-                    
-                    {{/unless}}
+                              </button>
+                              </li><br>                
+                         {{/unless}}
                     {{/each}}
                </ol>
                
