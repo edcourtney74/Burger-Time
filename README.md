@@ -9,7 +9,7 @@ A web app that tracks a list of burgers waiting to be eaten or already eaten.
   * When the user clicks the "Devour!" button, a PUT request is sent to the Model via the controller. The ORM is then used to change the value of the burger in the database. The View is then updated to show that the burger has moved to the eaten list.
   * The web app utilizes jQuery, Node, Express, MySQL and Handlebars.
 ***
-## Demonstartion
+## Demonstration
 ![Demonstration](https://github.com/edcourtney74/Burger/blob/master/public/assets/images/burger_time.gif "Demonstration")
 
 ## Mobile view
